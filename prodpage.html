@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Flexbox 0 — starting code</title>
+    <style>
+      html {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: black;
+      }
+
+      header {
+        background: white;
+        text-align: center;
+        height: 250px;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #7E3180;
+        line-height: 100px;
+        margin: 0px;
+      }
+
+      .image {
+        object-fit: contain;
+        width: auto;
+        text-align: right;
+        width: 40%;
+        padding: 30px;
+
+      }
+      .mockup {
+        height: 500px; 
+      }
+
+      .logo-img {
+        height: 150px;
+        text-align: right;
+      }
+      .explanation {
+        color: white;
+        width: 60%;
+        padding-right: 200px;
+      }
+
+      .flex-container {
+        background: black;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img class="logo-img" src="socioconnect_logo.png">
+      <h1> Product features</h1>
+    </header>
+
+    <div class="flex-container">
+        <div class="image">
+          <img class="mockup" src="interestspage.png">
+        </div>
+        <div class="explanation">
+          <h2>Tailored!</h2>
+          <p>Customize the app to only include content your interested in. No more mindless scrolling through content which is irrelevant to your goals.</p>
+        </div>
+      </div>
+
+    <div class="flex-container">
+      <div class="image">
+        <img class="mockup" src="profilepage.png">
+      </div>
+      <div class="explanation">
+        <h2>For the 'YOU' in Universe</h2>
+        <p>Capture the best version of yourself, share the best moments in your life. SocioConnect is designed to help you share your ideas in the most flexible way ever possible.</p>
+      </div>
+    </div>
+
+    <div class="flex-container">
+        <div class="image">
+          <img class="mockup" src="profilesearch.png">
+        </div>
+        <div class="explanation">
+          <h2>Meet your future collaborator</h2>
+          <p>SocioConnect brings people of similar interests together and provides them with the tools required to plan your next groundbreaking invention, your next Saturday road trip, or even better - your next Boba Tea party!!!</p>
+        </div>
+    </div>
+
+    <div class="flex-container">
+        <div class="image">
+          <img class="mockup" src="explorepage.png">
+        </div>
+        <div class="explanation"> 
+          <h2>Share!</h2>
+          <p>YouTube for videos, Twitter for ideas, Instagram for pictures, TikTok for reels. Everything at once? SocioConnect!</p>
+        </div>
+      </div>
+
+      <div class="flex-container">
+        <div class="image">
+          <img class="mockup" src="chatpage.png">
+        </div>
+        <div class="explanation"> 
+          <h2>Secure.</h2>
+          <p>These days we find so many apps that false-promise to keep our information safe, and the very next moment we find ads spamming us to buy the item we were looking at. We at SocioConnect believe that every information the user wants to be private, MUST be private. We use state of the art technology to secure every single point of information exchange - knowing that what can be compromised, will be compromised!</p>
+        </div>
+      </div>
+
+      <div class="flex-container">
+        <div class="image">
+          <img class="mockup" src="applanding.png">
+        </div>
+        <div class="explanation"> 
+          <h2>Safe on the eyes.. and the mind.</h2>
+          <p>Dark mode, Focus mode, Bedtime mode, Timer controls - you name it. We're the good guys :)</p>
+        </div>
+      </div>
+
+  </body>
+</html>
