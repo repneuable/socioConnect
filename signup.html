@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Signup Page</title>
+    <link rel="stylesheet" type="text/css" href="assets/signup.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="signup-form">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" required>
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div id="email-error"></div>
+                <button type="submit">Sign Up</button>
+            </form>
+            <div id="signup-success-message"></div>
+        </div>
+        <div class="donation-form">
+            <h2>Donate</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="donation-email">Email:</label>
+                <input type="email" id="donation-email" name="donation-email" required>
+
+                <div class="amount-buttons">
+                    <div class="amount-options">
+                        <button type="button" class="amount-btn" data-amount="25">$25</button>
+                        <button type="button" class="amount-btn" data-amount="50">$50</button>
+                        <button type="button" class="amount-btn" data-amount="100">$100</button>
+                        <button type="button" class="amount-btn" id="custom-amount-btn" data-amount="custom">Custom
+                            Amount</button>
+                    </div>
+                    <div class="form-group" id="form-group-id">
+                        <label for="custom-amount-input">Custom Amount</label>
+                        <input type="number" id="custom-amount-input" name="amount" class="form-control" min="1"
+                            step="1" placeholder="Enter custom amount">
+                    </div>
+                </div>
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method">
+                    <option value="credit-card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+                <button type="submit" id="pay-now-button">Pay Now</button>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        // Get references to DOM elements
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('email-error');
+        const signupForm = document.getElementById('signup-form');
+        const signupSuccessMessage = document.getElementById('signup-success-message');
+
+
+        const amountButtons = document.querySelectorAll('.amount-btn');
+        const customAmountInput = document.getElementById('custom-amount-input');
+        const customAmountBtn = document.getElementById('custom-amount-btn');
+        const formGroup = document.getElementById('form-group-id')
+        const paymentForm = document.querySelector('.donation-form form');
+        const payNowButton = document.getElementById('pay-now-button');
+
+        // Handle email validation on input change
+        emailInput.addEventListener('input', function () {
+            const email = emailInput.value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailRegex.test(email)) {
+                emailError.innerHTML = '';
+                emailError.className = 'error';
+            } else {
+                emailError.innerHTML = 'Please enter a valid email address';
+                emailError.className = 'error active';
+            }
+        });
+
+        // Handle sign up form submission
+        signupForm.addEventListener('submit', function (submitEvent) {
+            submitEvent.preventDefault();
+
+            signupSuccessMessage.innerHTML = 'Thank you for signing up!';
+        });
+
+        // Handle amount button clicks
+        amountButtons.forEach(function (amountButton) {
+            amountButton.addEventListener('click', function () {
+                // Set the selected amount
+                const amount = amountButton.getAttribute('data-amount');
+                customAmountInput.disabled = true;
+
+                // Update the UI to show the selected amount
+                amountButtons.forEach(function (btn) {
+                    if (btn === amountButton) {
+                        btn.classList.add('selected');
+                    } else {
+                        btn.classList.remove('selected');
+                    }
+                });
+
+
+
+                if (amount === 'custom') {
+                    // Enable custom amount input if custom button is selected
+                    formGroup.style.display = "block";
+                    customAmountInput.disabled = false;
+                } else {
+                    // Set the custom amount input to empty and disable it if another button is selected
+                    formGroup.style.display = "none";
+                    customAmountInput.value = '';
+                    customAmountInput.disabled = true;
+                    payNowButton.innerHTML = 'Pay $' + amount;
+                }
+
+                // Update the pay now button text
+                    
+
+                // Enable the pay now button
+                payNowButton.disabled = false;
+            });
+        });
+
+        // Handle custom amount input change
+        customAmountInput.addEventListener('input', function () {
+            const customAmount = customAmountInput.value;
+            if (customAmount === '' || parseFloat(customAmount) <= 0) {
+                payNowButton.disabled = true;
+                // Show error message to user
+                return;
+            }
+
+            // Update the pay now button text
+
+            payNowButton.innerHTML = 'Pay $' + customAmount;
+
+
+            // Enable the pay now button
+            payNowButton.disabled = false;
+        });
+
+        // Handle payment form submission
+        paymentForm.addEventListener('submit', function (submitEvent) {
+            submitEvent.preventDefault();
+
+            // Reset the form and UI
+            paymentForm.reset();
+            amountButtons.forEach(function (btn) {
+                btn.classList.remove('selected');
+            });
+            customAmountInput.value = '';
+            customAmountInput.disabled = true;
+            payNowButton.disabled = false;
+
+            // Show a success message to the user
+            alert('Thank you for the support! Your payment is successful.');
+        });
+    </script>
+
+
+</body>
+
+</html>
