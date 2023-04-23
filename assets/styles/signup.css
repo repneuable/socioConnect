@@ -4,12 +4,21 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.container {
+.container-signup {
+    margin-right: 2em;
+    margin-left: 2em;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 120vh;
     background-color: #7E3180;
+}
+
+/* Chart.js */
+.chart-box {
+    margin: 2em;
+    background-color: white;
 }
 
 .signup-form,
@@ -20,6 +29,11 @@
     padding: 20px;
     width: 400px;
     margin: 20px;
+}
+
+.signup-form-box, 
+.donation-form-box{
+    display: flex;
 }
 
 .signup-form h2,

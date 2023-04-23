@@ -259,6 +259,14 @@ footer {
         display: flex;
         flex-direction: column;
     }
+    nav li {
+        padding: 0.2em;
+    }
+    .container-signup {
+        margin-right: 1em;
+        margin-left: 1em;
+        background: #FAEFE0;
+    }
 }
 
 .motto-container {
@@ -344,3 +352,4 @@ footer {
     /* max-width: 200px; */
     border-radius: 50%;
 }
+
