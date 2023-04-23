@@ -11,7 +11,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 120vh;
+/*    height: 120vh; */
     background-color: #7E3180;
 }
 
@@ -34,6 +34,11 @@
 .signup-form-box, 
 .donation-form-box{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 .signup-form h2,
