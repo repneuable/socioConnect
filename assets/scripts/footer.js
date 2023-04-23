@@ -7,5 +7,6 @@ document.write('<footer>\
             <a href="index.html">Home</a>\
             <a href="about.html">About Us</a>\
             <a href="features.html">Product Features</a>\
+            <li><a href="signup.html">Sign Up</a></li>\
         </div>\
     </footer>');
