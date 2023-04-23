@@ -76,10 +76,12 @@
     </div>
     <div class="cta"><a href="features.html"><button class="learn-more-btn">Learn More</button></a></div>
     <div class="cta"><a href="signup.html"><button class="cta-btn">Sign Up!</button></a></div>
+    <div class="cta"><button class="learn-more-btn" id="loadChart">View Membership</button></div>
 
     <div id="chartContainer"><canvas id="myChart" class="chart-box"></canvas></div>
     <script>
         $(document).ready(function () {
+            $('#loadChart').click(function () {
             $('#chartContainer').load('assets/chart.html', function () {
                 const salesData = [100, 200, 150, 300, 250, 400, 350, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1050, 1100, 1150, 1200, 1250];
                 const donationsData = [50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500, 525, 550, 575, 600, 625];
@@ -102,6 +104,7 @@
                         }]
                     }
                 });
+            });
             });
         });
 
