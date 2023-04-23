@@ -259,6 +259,9 @@ footer {
         display: flex;
         flex-direction: column;
     }
+    nav li {
+        padding: 0.2em;
+    }
 }
 
 .motto-container {
