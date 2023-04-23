@@ -1,6 +1,6 @@
 <header>
 <a href="index.html">
-    <div class="logo-img-container"><img class="logo-img" src="assets/images/logo.png" alt="logo"></div>
+    <div class="logo-img-container"><img class="logo-img" src="assets/images/logo.png" alt="logo"/></div>
 </a>
 <div class="logo-text">
     <a href="index.html">
