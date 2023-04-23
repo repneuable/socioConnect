@@ -263,8 +263,9 @@ footer {
         padding: 0.2em;
     }
     .container-signup {
-        margin-right: 0em;
-        margin-left: 0em;
+        margin-right: 1em;
+        margin-left: 1em;
+        background: #FAEFE0;
     }
 }
 
