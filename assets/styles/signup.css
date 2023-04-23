@@ -31,6 +31,7 @@
 .signup-form-box, 
 .donation-form-box{
     display: flex;
+    flex-direction: column;
 }
 
 .signup-form h2,

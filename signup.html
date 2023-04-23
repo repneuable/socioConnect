@@ -18,7 +18,7 @@
 
 <body>
     <script src="assets/scripts/header.js"></script>
-    <div class="container-signup">
+    <div class="container container-signup">
         <div class="signup-form-box">
             <div class="signup-form">
                 <h2>Sign Up</h2>
@@ -124,7 +124,7 @@
         $(document).ready(function () {
             $('#loadChart').click(function () {
                 $('#chartContainer').load('assets/chart.html', function () {
-                    fetch('scripts/data.csv')
+                    fetch('assets/scripts/data.csv')
                         .then(response => response.text())
                         .then(data => {
                             // Parse CSV data into arrays for Chart.js
