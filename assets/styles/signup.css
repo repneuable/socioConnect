@@ -6,6 +6,7 @@
 
 .container-signup {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -31,7 +32,6 @@
 .signup-form-box, 
 .donation-form-box{
     display: flex;
-    flex-direction: column;
 }
 
 .signup-form h2,
