@@ -124,7 +124,7 @@
         $(document).ready(function () {
             $('#loadChart').click(function () {
                 $('#chartContainer').load('assets/chart.html', function () {
-                    fetch('assets/scripts/data.csv')
+                    fetch('scripts/data.csv')
                         .then(response => response.text())
                         .then(data => {
                             // Parse CSV data into arrays for Chart.js
