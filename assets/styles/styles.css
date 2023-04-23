@@ -27,7 +27,7 @@ body {
 }
 
 .logo-img {
-    height: 100%;
+    /* height: 100%; */ /*removed for Safari compatibility?*/
     max-width: 150px;
     text-align: right;
 
