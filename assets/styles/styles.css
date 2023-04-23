@@ -262,6 +262,10 @@ footer {
     nav li {
         padding: 0.2em;
     }
+    .container-signup {
+        margin-right: 0em;
+        margin-left: 0em;
+    }
 }
 
 .motto-container {
