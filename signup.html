@@ -63,9 +63,11 @@
                     <option value="paypal">PayPal</option>
                 </select>
                 <button type="submit" id="pay-now-button">Pay Now</button>
+                <button id="loadChart" class="cta-btn" style="width:100%">See why you should join!</button>
             </form>
-            <button id="loadChart" class="cta-btn" style="width:100%">Click here to see why you should join!</button>
+            
         </div>
+        
 <!--
             <script>
                 $(document).ready(function () {
@@ -113,7 +115,7 @@
             </script> -->
 
     </div>
-    <div id="chartContainer"><canvas id="myChart"></canvas></div>
+    <div id="chartContainer"><canvas id="myChart" class="chart-box"></canvas></div>
     <script>
         $(document).ready(function () {
             $('#loadChart').click(function () {
