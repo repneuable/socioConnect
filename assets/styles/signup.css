@@ -12,6 +12,12 @@
     background-color: #7E3180;
 }
 
+/* Chart.js */
+.chart-box {
+    margin: 2em;
+    background-color: white;
+}
+
 .signup-form,
 .donation-form {
     background-color: #d8d396;
@@ -20,6 +26,11 @@
     padding: 20px;
     width: 400px;
     margin: 20px;
+}
+
+.signup-form-box, 
+.donation-form-box{
+    display: flex;
 }
 
 .signup-form h2,

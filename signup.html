@@ -19,56 +19,57 @@
 <body>
     <script src="assets/scripts/header.js"></script>
     <div class="container">
-        <div class="signup-form">
-            <h2>Sign Up</h2>
-            <form id="signup-form">
-                <label for="first-name">First Name:</label>
-                <input type="text" id="first-name" name="first-name" required>
-                <label for="last-name">Last Name:</label>
-                <input type="text" id="last-name" name="last-name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <div id="email-error"></div>
-                <button type="submit">Sign Up</button>
-            </form>
-            <div id="signup-success-message"></div>
+        <div classs="signup-form-box">
+            <div class="signup-form">
+                <h2>Sign Up</h2>
+                <form id="signup-form">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <div id="email-error"></div>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <div id="signup-success-message"></div>
+            </div>
         </div>
-        <div class="donation-form">
-            <h2>Donate</h2>
+        <div classs="donation-form-box">
+            <div class="donation-form">
+                <h2>Donate</h2>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="donation-email">Email:</label>
+                    <input type="email" id="donation-email" name="donation-email" required>
 
-
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="donation-email">Email:</label>
-                <input type="email" id="donation-email" name="donation-email" required>
-
-                <div class="amount-buttons">
-                    <div class="amount-options">
-                        <button type="button" class="amount-btn" data-amount="25">$25</button>
-                        <button type="button" class="amount-btn" data-amount="50">$50</button>
-                        <button type="button" class="amount-btn" data-amount="100">$100</button>
-                        <button type="button" class="amount-btn" id="custom-amount-btn" data-amount="custom">Custom
-                            Amount</button>
+                    <div class="amount-buttons">
+                        <div class="amount-options">
+                            <button type="button" class="amount-btn" data-amount="25">$25</button>
+                            <button type="button" class="amount-btn" data-amount="50">$50</button>
+                            <button type="button" class="amount-btn" data-amount="100">$100</button>
+                            <button type="button" class="amount-btn" id="custom-amount-btn" data-amount="custom">Custom
+                                Amount</button>
+                        </div>
+                        <div class="form-group" id="form-group-id">
+                            <label for="custom-amount-input">Custom Amount</label>
+                            <input type="number" id="custom-amount-input" name="amount" class="form-control" min="1"
+                                step="1" placeholder="Enter custom amount">
+                        </div>
                     </div>
-                    <div class="form-group" id="form-group-id">
-                        <label for="custom-amount-input">Custom Amount</label>
-                        <input type="number" id="custom-amount-input" name="amount" class="form-control" min="1"
-                            step="1" placeholder="Enter custom amount">
-                    </div>
-                </div>
-                <label for="payment-method">Payment Method:</label>
-                <select id="payment-method" name="payment-method">
-                    <option value="credit-card">Credit Card</option>
-                    <option value="paypal">PayPal</option>
-                </select>
-                <button type="submit" id="pay-now-button">Pay Now</button>
-                <button id="loadChart" class="cta-btn" style="width:100%">See why you should join!</button>
-            </form>
-            
+                    <label for="payment-method">Payment Method:</label>
+                    <select id="payment-method" name="payment-method">
+                        <option value="credit-card">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                    </select>
+                    <button type="submit" id="pay-now-button">Pay Now</button>
+                    <button id="loadChart" class="cta-btn" style="width:100%">See why you should join!</button>
+                </form>
+            </div>
         </div>
-        
-<!--
+
+        <!--
             <script>
                 $(document).ready(function () {
                     $('#loadChart').click(function () {
@@ -115,7 +116,10 @@
             </script> -->
 
     </div>
-    <div id="chartContainer" class="chart-box"><canvas id="myChart"></canvas></div>
+
+
+
+    <div id="chartContainer"><canvas id="myChart" class="chart-box"></canvas></div>
     <script>
         $(document).ready(function () {
             $('#loadChart').click(function () {
@@ -132,7 +136,7 @@
                                 salesData.push(parseInt(values[0]));
                                 donationsData.push(parseInt(values[1]));
                             });
-    
+
                             // Create the chart
                             const ctx = document.getElementById('myChart').getContext('2d');
                             const myChart = new Chart(ctx, {
@@ -143,7 +147,9 @@
                                         label: 'Sales',
                                         data: salesData,
                                         borderColor: 'blue',
-                                        fill: false
+                                        fill: false,
+                                        borderColor: Utils.CHART_COLORS.red,
+                                        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5)
                                     }, {
                                         label: 'Donations',
                                         data: donationsData,
@@ -156,7 +162,7 @@
                 });
             });
         });
-    </script>    
+    </script>
     <script src="assets/scripts/signup_form.js"></script>
     <script src="assets/scripts/footer.js"></script>
     <!--

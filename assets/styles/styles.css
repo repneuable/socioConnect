@@ -345,10 +345,3 @@ footer {
     border-radius: 50%;
 }
 
-
-
-/* Chart.js */
-.chart-box {
-    margin: 2em;
-    border: 1px solid gray;
-}
