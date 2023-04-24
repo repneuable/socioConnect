@@ -34,6 +34,11 @@
 .signup-form-box, 
 .donation-form-box{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 .signup-form h2,
