@@ -1,0 +1,185 @@
+/* General styling */
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container-signup {
+    margin-right: 2em;
+    margin-left: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*height: 120vh;*/ /*Removed 4-23-23 at 7:48pm for viewability*/
+    background-color: #7E3180;
+}
+
+/* Chart.js */
+.chart-box {
+    margin: 2em;
+    background-color: white;
+}
+
+.signup-form,
+.donation-form {
+    background-color: #d8d396;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 400px;
+    margin: 20px;
+}
+
+.signup-form-box, 
+.donation-form-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.signup-form h2,
+.donation-form h2 {
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form select,
+form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+form select {
+    height: 40px;
+}
+
+.amount-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.amount-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.amount-btn {
+    border: none;
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.amount-btn.active {
+    background-color: #2196f3;
+    color: #fff;
+}
+
+#form-group-id {
+    display: none;
+}
+
+#custom-amount-input {
+    margin-bottom: 10px;
+}
+
+/* Form validation */
+form label[for="first-name"].error,
+form label[for="last-name"].error,
+form label[for="donation-email"].error {
+    color: red;
+}
+
+form input.error,
+form select.error,
+form input[type="email"].error {
+    border: 1px solid red;
+}
+
+form input[type="email"].error:focus {
+    outline: none;
+    box-shadow: 0 0 5px red;
+}
+
+#error-message,
+#email-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.error.active {
+    display: block;
+}
+
+#signup-success-message {
+    color: green;
+}
+
+
+/* Button styling */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #07630a;
+}
+
+button[type="button"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="button"]:hover {
+    background-color: #07630a;
+}
+
+button#pay-now-button {
+    display: block;
+    margin: 20px auto 0;
+}
