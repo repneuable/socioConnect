@@ -111,9 +111,15 @@ def get_data():
     # Fetch data from the signups table
     c.execute('''SELECT id, date FROM signups ORDER BY date ASC''')
     rows = c.fetchall()
+
+    # Fetch the count of rows in the table
+    c.execute('''SELECT COUNT(*) FROM signups''')
+    row_count = c.fetchone()[0]
+
     c.close()
 
-    return jsonify(rows)
+    return jsonify(rows=rows, count=row_count)
+
 
 
 # ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
