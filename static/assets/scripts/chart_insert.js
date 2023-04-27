@@ -33,32 +33,6 @@ $(document).ready(function () {
                     }, {});
 
                     console.log(groupedData);
-                    /*
-                    // Create the chart
-                    const ctx = document.getElementById('myChart').getContext('2d');
-                    const myChart = new Chart(ctx, {
-                        type: 'line',
-                        data: {
-                            labels: formattedData.map(row => row.date),
-                            datasets: [{
-                                label: 'Sign Ups',
-                                data: formattedData.map(row => row.id),
-                                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                                borderColor: 'rgba(255, 99, 132, 1)',
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            scales: {
-                                y: {
-                                    beginAtZero: true
-                                }
-                            }
-                        }
-                    });
-
-
-                    */
 
 
                     // Create the chart
@@ -70,15 +44,50 @@ $(document).ready(function () {
                             datasets: [{
                                 label: 'Sign Ups',
                                 data: Object.values(groupedData),
-                                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                                borderColor: 'rgba(255, 99, 132, 1)',
-                                borderWidth: 1
+                                //backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                //borderColor: 'rgba(255, 99, 132, 1)',
+                                //borderWidth: 1
+                                backgroundColor: 'rgba(126, 49, 128, 0.2)',
+                                borderColor: '#7E3180',
+                                borderWidth: 3,
+                                pointBackgroundColor: '#7E3180',
+                                pointBorderColor: '#fff',
+                                pointBorderWidth: 2,
+                                pointRadius: 5,
+                                pointHoverRadius: 7,
                             }]
                         },
                         options: {
                             scales: {
                                 y: {
-                                    beginAtZero: true
+                                    beginAtZero: true,
+                                        ticks: {
+                                        font: {
+                                            weight: 'bold',
+                                                size: 14,
+                                                    color: '#7E3180'
+                                        }
+                                    }
+                                },
+                                x: {
+                                    ticks: {
+                                        font: {
+                                            weight: 'bold',
+                                                size: 14,
+                                                    color: '#7E3180'
+                                        }
+                                    }
+                                }
+                            },
+                            plugins: {
+                                legend: {
+                                    labels: {
+                                        font: {
+                                            weight: 'bold',
+                                                size: 16,
+                                                    color: '#7E3180'
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -92,78 +101,3 @@ $(document).ready(function () {
 });
 
 
-/* OLD EXAMPLE 1
-$(document).ready(function () {
-    $('#loadChart').click(function () {
-        $('#chartContainer').load('static/assets/chart.html', function () {
-            const salesData = [100, 200, 150, 300, 250, 400, 350, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1050, 1100, 1150, 1200, 1250];
-            const donationsData = [50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500, 525, 550, 575, 600, 625];
-
-            const ctx = document.getElementById('myChart').getContext('2d');
-            const myChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                    datasets: [{
-                        label: 'Sales',
-                        data: salesData,
-                        borderColor: 'blue',
-                        fill: false
-                    }, {
-                        label: 'Donations',
-                        data: donationsData,
-                        borderColor: 'green',
-                        fill: false
-                    }]
-                }
-            });
-        });
-    });
-});*/
-
-/* OLD VERSION 2
-
-// Get the CSV data
-fetch('/get-data')
-.then(response => response.text())
-.then(data => {
-
-*/
-
-/*
-// Parse CSV data into arrays for Chart.js
-const salesData = [];
-const donationsData = [];
-const rows = data.split('\n');
-rows.forEach(row => {
-    const values = row.split(',');
-    salesData.push(parseInt(values[0]));
-    donationsData.push(parseInt(values[1]));
-});
-*/
-
-/*
-// Create the chart
-const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: data.map(row => row.date),
-        datasets: [{
-            label: 'Sign Ups',
-            data: data.map(row => row.id),
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgba(255, 99, 132, 1)',
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-});
-*/
