@@ -8,7 +8,7 @@ $(document).ready(function () {
                     console.log(data)
                     const rows = data.rows
                     const row_count = data.count
-
+                    const row_monthly = data.avgmonth
                     /*
                     const formattedData = rows.map(row => ({
                         date: row[1],
@@ -83,7 +83,9 @@ $(document).ready(function () {
                             }
                         }
                     });
-                    document.getElementById('row-count').innerText = `Total Sign Ups: ${row_count}`
+                    // Use backticks for accessing the variables
+                    document.getElementById('row-count').innerHTML = `Monthly Sign Ups: ${row_monthly}<br> Total # of Users: ${row_count}`
+
                 });
         });
     });
