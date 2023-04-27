@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" sizes="32x32" href="/static/assets/images/favicon.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <link rel="stylesheet" href="/static/assets/styles/styles.css">
 
     <title>SocioConnect Home</title>
@@ -76,40 +77,11 @@
     </div>
     <div class="cta"><a href="features"><button class="learn-more-btn">Learn More</button></a></div>
     <div class="cta"><a href="signup"><button class="cta-btn">Sign Up!</button></a></div>
-    <div class="cta"><button class="learn-more-btn" id="loadChart">View Statistics</button></div>
-
-    <div id="chartContainer"><canvas id="myChart" class="chart-box"></canvas></div>
-    <script>
-        $(document).ready(function () {
-            $('#loadChart').click(function () {
-            $('#chartContainer').load('static/assets/chart.html', function () {
-                const salesData = [100, 200, 150, 300, 250, 400, 350, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1050, 1100, 1150, 1200, 1250];
-                const donationsData = [50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500, 525, 550, 575, 600, 625];
-
-                const ctx = document.getElementById('myChart').getContext('2d');
-                const myChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                        datasets: [{
-                            label: 'Sales',
-                            data: salesData,
-                            borderColor: 'blue',
-                            fill: false
-                        }, {
-                            label: 'Donations',
-                            data: donationsData,
-                            borderColor: 'green',
-                            fill: false
-                        }]
-                    }
-                });
-            });
-            });
-        });
-
-    </script>
-
+    <div class="cta"><button id="loadChart" class="learn-more-btn" style="margin-bottom: 2.5em;">Explore our success: View our signup chart</button></div>
+    <div id="row-count"></div>
+    <div id="chartContainer"></div><!--class="chart-box"-->
+    
+    <script src="/static/assets/scripts/chart_insert.js"></script>
     <script src="/static/assets/scripts/footer.js"></script>
 </body>
 
