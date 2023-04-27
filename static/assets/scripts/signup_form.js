@@ -95,7 +95,7 @@ amountButtons.forEach(function (amountButton) {
         // Set the selected amount
         const amount = amountButton.getAttribute('data-amount');
         customAmountInput.disabled = true;
-        
+
         // Set selected amount hidden input field value to the button's data-amount attribute
         selectedAmountInput.value = amount;
 
@@ -214,12 +214,13 @@ paymentForm.addEventListener('submit', function (submitEvent) {
     const fname = paymentForm.elements['first-name'].value;
     const lname = paymentForm.elements['last-name'].value;
     const email = paymentForm.elements['donation-email'].value;
+    const paymethod = paymentForm.elements['payment-method'].value;    
     //const payment = paymentForm.elements['amount'].value;
     //const selectedAmount = paymentForm.elements['selected-amount'].value; // Get the selected amount
 
     const payment = paymentForm.elements['amount'] ? paymentForm.elements['amount'].value : paymentForm.elements['selected-amount'].value;
 
-    
+
 
     console.log(fname, lname, email, payment);
     fetch('/submit-donation', {
@@ -243,5 +244,5 @@ paymentForm.addEventListener('submit', function (submitEvent) {
     payNowButton.disabled = false;
 
     // Show a success message to the user
-    alert('Thank you for the support! Your *PAYPAL* payment is successful.');
+    alert(`Thank you for the support, ${fname}! Your ${paymethod} payment is successful.`);
 });
