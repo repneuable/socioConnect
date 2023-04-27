@@ -116,9 +116,14 @@ def get_data():
     c.execute('''SELECT COUNT(*) FROM signups''')
     row_count = c.fetchone()[0]
 
+    # Fetch the average number of signups in a given month
+    c.execute("SELECT COUNT(*) / (SELECT ((julianday(MAX(date)) - julianday(MIN(date))) / 30) FROM signups) AS avg_signups_per_month FROM signups")
+    avg_signups_per_month = c.fetchone()[0]
+    avg_signups_per_month = round(avg_signups_per_month)
+    
     c.close()
 
-    return jsonify(rows=rows, count=row_count)
+    return jsonify(rows=rows, count=row_count, avgmonth=avg_signups_per_month)
 
 
 
