@@ -50,45 +50,6 @@ signupForm.addEventListener('submit', function (submitEvent) {
     signupSuccessMessage.innerHTML = 'Thank you for signing up with SocioConnect!';
 });
 
-/*
-// Handle amount button clicks
-amountButtons.forEach(function (amountButton) {
-    amountButton.addEventListener('click', function () {
-        // Set the selected amount
-        const amount = amountButton.getAttribute('data-amount');
-        customAmountInput.disabled = true;
-
-        // Update the UI to show the selected amount
-        amountButtons.forEach(function (btn) {
-            if (btn === amountButton) {
-                btn.classList.add('selected');
-            } else {
-                btn.classList.remove('selected');
-            }
-        });
-
-
-
-        if (amount === 'custom') {
-            // Enable custom amount input if custom button is selected
-            formGroup.style.display = "block";
-            customAmountInput.disabled = false;
-        } else {
-            // Set the custom amount input to empty and disable it if another button is selected
-            formGroup.style.display = "none";
-            customAmountInput.value = '';
-            customAmountInput.disabled = true;
-            payNowButton.innerHTML = 'Pay $' + amount;
-        }
-
-        // Update the pay now button text
-
-
-        // Enable the pay now button
-        payNowButton.disabled = false;
-    });
-});
-*/
 
 amountButtons.forEach(function (amountButton) {
     amountButton.addEventListener('click', function () {
@@ -154,7 +115,6 @@ paymentForm.addEventListener('submit', function (submitEvent) {
     const paymethod = paymentForm.elements['payment-method'].value;    
     //const payment = paymentForm.elements['amount'].value;
     //const selectedAmount = paymentForm.elements['selected-amount'].value; // Get the selected amount
-
     const payment = paymentForm.elements['amount'] ? paymentForm.elements['amount'].value : paymentForm.elements['selected-amount'].value;
 
     //console.log(fname, lname, email, payment);
