@@ -1,10 +1,25 @@
 # if port 5000 in use already, try: export [FLASK_RUN_PORT=8080] before [flask run]
+# ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+# ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+# ~*~*~     ISM6225 - Final Project      *~*
+# ~*~*~             Group 12             *~*
+# ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+# ~* Joe Arul Susai Prakash  *~*~*~*~*~*~*~*
+# ~* Divyanshi Singh         *~*~*~*~*~*~*~*
+# ~* Kevin Hitt              *~*~*~*~*~*~*~*
+# ~* Sai Charan Dasari       *~*~*~*~*~*~*~*
+# ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+
 from flask import Flask, render_template, request, jsonify
 import csv
 import sqlite3
 import datetime
 
 app = Flask(__name__)
+
+# ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+# ~*~*~*~*~        PAGES       *~*~*~*~*~*~*
+# ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 
 # Flask route to render homepage
 @app.route("/")
@@ -25,6 +40,13 @@ def features():
 @app.route('/signup')
 def signup():
     return render_template('signup.html')
+
+
+# ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+# ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+# ~*~*~*~*~     ENDPOINTS      *~*~*~*~*~*~*
+# ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+# ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 
 # Flask route to handle Signup form submissions
 @app.route('/submit-form', methods=['POST'])
