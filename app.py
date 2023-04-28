@@ -7,36 +7,26 @@ import datetime
 app = Flask(__name__)
 
 # Flask route to render homepage
-
-
 @app.route("/")
 def home():
     return render_template('index.html')
 
 # Flask route to render About Us page
-
-
 @app.route('/about')
 def about():
     return render_template('about.html')
 
 # Flask route to render Product Features page
-
-
 @app.route("/features")
 def features():
     return render_template('features.html')
 
 # Flask route to render Signup Page
-
-
 @app.route('/signup')
 def signup():
     return render_template('signup.html')
 
 # Flask route to handle Signup form submissions
-
-
 @app.route('/submit-form', methods=['POST'])
 def submit_form():
     fname = request.form['first-name']
@@ -70,8 +60,6 @@ def submit_donation():
     fname = request.form['first-name']
     lname = request.form['last-name']
     email = request.form['donation-email']
-    # payment = request.form['amount']
-    # payment = request.form['selected-amount'] if 'selected-amount' in request.form else request.form['amount']
     if 'custom' in request.form['selected-amount']:
         payment = request.form['amount']
     else:
@@ -99,9 +87,8 @@ def submit_donation():
 
     return 'Thank you for your support!'
 
+
 # Flask route to provide SQLite data to Chart.js when rendered
-
-
 @app.route('/get-data')
 def get_data():
 
@@ -120,11 +107,10 @@ def get_data():
     c.execute("SELECT COUNT(*) / (SELECT ((julianday(MAX(date)) - julianday(MIN(date))) / 30) FROM signups) AS avg_signups_per_month FROM signups")
     avg_signups_per_month = c.fetchone()[0]
     avg_signups_per_month = round(avg_signups_per_month)
-    
+
     c.close()
 
     return jsonify(rows=rows, count=row_count, avgmonth=avg_signups_per_month)
-
 
 
 # ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
