@@ -129,69 +129,6 @@ amountButtons.forEach(function (amountButton) {
     });
 });
 
-/* ITERATION 5
-amountButtons.forEach(function (amountButton) {
-    amountButton.addEventListener('click', function () {
-        // Set the selected amount
-        const amount = amountButton.getAttribute('data-amount');
-        customAmountInput.disabled = true;
-
-        // Set selected amount input field value to the button's data-amount attribute
-        selectedAmountInput.value = btn.dataset.amount;
-
-        // Update the UI to show the selected amount
-        amountButtons.forEach(function (btn) {
-            if (btn === amountButton) {
-                btn.classList.add('selected');
-            } else {
-                btn.classList.remove('selected');
-            }
-        });
-
-        if (amount === 'custom') {
-            // Enable custom amount input if custom button is selected
-            formGroup.style.display = "block";
-            customAmountInput.disabled = false;
-        } else {
-            // Set the custom amount input to empty and disable it if another button is selected
-            formGroup.style.display = "none";
-            customAmountInput.value = '';
-            customAmountInput.disabled = true;
-            payNowButton.innerHTML = 'Pay $' + amount;
-        }
-
-        // Update the amount input field
-        amountInput.value = amount;
-
-        // Enable the pay now button
-        payNowButton.disabled = false;
-    });
-});
-*/
-
-/* ITERATION 5
-// Add event listeners to amount buttons
-amountButtons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-        // Set selected amount input field value to the button's data-amount attribute
-        selectedAmountInput.value = btn.dataset.amount;
-        
-        // Update UI to show selected button
-        amountButtons.forEach(function (btn) {
-            btn.classList.remove('selected');
-        });
-        btn.classList.add('selected');
-        
-        // Enable custom amount input field
-        customAmountInput.disabled = false;
-        customAmountInput.focus();
-        
-        // Update the pay now button text
-        payNowButton.innerHTML = 'Pay $' + btn.dataset.amount;
-    });
-});
-*/
-
 // Handle custom amount input change
 customAmountInput.addEventListener('input', function () {
     const customAmount = customAmountInput.value;
@@ -212,17 +149,17 @@ paymentForm.addEventListener('submit', function (submitEvent) {
     submitEvent.preventDefault();
 
     const fname = paymentForm.elements['first-name'].value;
-    const lname = paymentForm.elements['last-name'].value;
-    const email = paymentForm.elements['donation-email'].value;
+    //const lname = paymentForm.elements['last-name'].value;
+    //const email = paymentForm.elements['donation-email'].value;
     const paymethod = paymentForm.elements['payment-method'].value;    
     //const payment = paymentForm.elements['amount'].value;
     //const selectedAmount = paymentForm.elements['selected-amount'].value; // Get the selected amount
 
     const payment = paymentForm.elements['amount'] ? paymentForm.elements['amount'].value : paymentForm.elements['selected-amount'].value;
 
+    //console.log(fname, lname, email, payment);
 
-
-    console.log(fname, lname, email, payment);
+    // POST request to the Flask server endpoint '/submit-donation' when the payment form is submitted by the user. It includes the data from the payment form in the request body, which is sent as a new FormData object.
     fetch('/submit-donation', {
         method: 'POST',
         body: new FormData(paymentForm)
