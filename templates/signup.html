@@ -75,113 +75,12 @@
 
                         <button type="submit" id="pay-now-button">Pay Now</button>
                     </form>
-
-                    <!-- MOVE BUTTON OUTSIDE OF FORM
-                        ********************************
-                        ********************************
-                        ********************************
-                        ********************************
-
-                     -->
                 </div>
             </div>
             <button id="loadChart" class="cta-btn" style="margin-bottom: 2.5em;">Explore our success: View our signup chart</button>
         </div>
     </div>
     </div>
-
-    <!-- INSTANCE 1
-            <script>
-                $(document).ready(function () {
-                    $('#loadChart').click(function () {
-                        $('#chartContainer').load('static/assets/chart.html', function () {
-                            new Chart(document.getElementById("Signups"), {
-                                // Your Chart.js code here
-                                fetch('data.csv')
-                                     .then(response => response.text())
-                                    .then(data => {
-                                        // Parse CSV data into arrays for Chart.js
-                                        const salesData = [];
-                                        const donationsData = [];
-                                        const rows = data.split('\n');
-                                        rows.forEach(row => {
-                                            const values = row.split(',');
-                                            salesData.push(parseInt(values[0]));
-                                            donationsData.push(parseInt(values[1]));
-                                        });
-
-                                        // Create the chart
-                                        const ctx = document.getElementById('myChart').getContext('2d');
-                                        const myChart = new Chart(ctx, {
-                                            type: 'line',
-                                            data: {
-                                                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                                                datasets: [{
-                                                    label: 'Sales',
-                                                    data: salesData,
-                                                    borderColor: 'blue',
-                                                    fill: false
-                                                }, {
-                                                    label: 'Donations',
-                                                    data: donationsData,
-                                                    borderColor: 'green',
-                                                    fill: false
-                                                }]
-                                            }
-                                        });
-                                    });
-                            });
-                        });
-                    });
-                });
-            </script> -->
-
-    <!-- INSTANCE 2
-    
-    <script>
-        $(document).ready(function () {
-            $('#loadChart').click(function () {
-                $('#chartContainer').load('static/assets/chart.html', function () {
-                    fetch('assets/scripts/data.csv')
-                        .then(response => response.text())
-                        .then(data => {
-                            // Parse CSV data into arrays for Chart.js
-                            const salesData = [];
-                            const donationsData = [];
-                            const rows = data.split('\n');
-                            rows.forEach(row => {
-                                const values = row.split(',');
-                                salesData.push(parseInt(values[0]));
-                                donationsData.push(parseInt(values[1]));
-                            });
-
-                            // Create the chart
-                            const ctx = document.getElementById('myChart').getContext('2d');
-                            const myChart = new Chart(ctx, {
-                                type: 'line',
-                                data: {
-                                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                                    datasets: [{
-                                        label: 'Sales',
-                                        data: salesData,
-                                        borderColor: 'blue',
-                                        fill: false,
-                                        borderColor: Utils.CHART_COLORS.red,
-                                        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5)
-                                    }, {
-                                        label: 'Donations',
-                                        data: donationsData,
-                                        borderColor: 'green',
-                                        fill: false
-                                    }]
-                                }
-                            });
-                        });
-                });
-            });
-        });
-    </script>
-    -->
 
     <div id="row-count"></div>
     <div id="chartContainer"></div>
